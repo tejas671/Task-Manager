@@ -12,6 +12,10 @@ app = Flask(__name__)
 CORS(app, supports_credentials=True)
 app.secret_key = "supersecretkey"  # for session handling
 
+@app.route("/")
+def home():
+    return "Task Manager API is running"
+
 # DB connection
 def get_db_connection():
     return mysql.connector.connect(
